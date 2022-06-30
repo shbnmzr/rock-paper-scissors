@@ -1,6 +1,6 @@
 import pygame
 from Network import Network
-
+from Button import Button
 pygame.font.init()
 
 width = 700
@@ -8,31 +8,6 @@ height = 700
 
 win = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Client')
-
-
-class Button:
-    def __init__(self, text, x, y, color):
-        self.text = text
-        self.x = x
-        self.y = y
-        self.color = color
-        self.width = 150
-        self.height = 100
-
-    def draw(self, win):
-        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
-        font = pygame.font.SysFont('Roboto', 40)
-        text = font.render(self.text, 1, (255, 255, 255))
-        # Centers text
-        win.blit(text, (self.x + round(self.width / 2) - round(text.get_width() / 2),
-                 self.y + round(self.height / 2) - round(text.get_height())))
-
-    def click(self, pos):
-        x1 = pos[0]
-        y1 = pos[1]
-
-        return ((self.x <= x1 <= self.x + self.width)
-               and (self.y <= y1 <= self.y + self.height))
 
 
 def redraw_window(win, game, p):
@@ -169,10 +144,3 @@ def menu_screen():
 
 while True:
     menu_screen()
-
-
-
-
-
-
-
