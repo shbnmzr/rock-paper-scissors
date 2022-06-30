@@ -3,8 +3,8 @@ from Network import Network
 from Button import Button
 pygame.font.init()
 
-width = 700
-height = 700
+width = 1000
+height = 1000
 
 win = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Client')
